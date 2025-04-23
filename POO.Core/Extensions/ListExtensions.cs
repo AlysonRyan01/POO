@@ -2,13 +2,10 @@ namespace POO.Core.Extensions
 {
     public static class ListExtensions
     {
-        public static void AddIfNotNull(this List<string> list, List<string?> items)
+        public static void AddIfNotNull(this List<string> list, string key, string? value)
         {
-            if (items == null) return;
-
-            foreach(var item in items)
-                if(!string.IsNullOrEmpty(item))
-                    list.Add(item);
+            if (!string.IsNullOrEmpty(value))
+                list.Add($"{key}={value}");
         }
     }
 }
