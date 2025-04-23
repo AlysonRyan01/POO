@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using POO.Core.ValueObjects.Exceptions;
 
 namespace POO.Core.ValueObjects
@@ -8,7 +7,7 @@ namespace POO.Core.ValueObjects
         public Url(string address) 
         {
             Address = address;
-            InvalidUrlException.ThrowIfInvalidUrl(address);
+            InvalidUrlException.ThrowIfInvalid(address);
         }
 
         public string Address { get; private set; }

@@ -1,3 +1,5 @@
+using POO.Core.ValueObjects.Exceptions;
+
 namespace POO.Core.ValueObjects
 {
     public class Campaign : BaseValueObject
@@ -10,6 +12,10 @@ namespace POO.Core.ValueObjects
             Id = id;
             Term = term;
             Content = content;
+
+            InvalidCampaignException.InvalidCampaign(source, "Source is invalid");
+            InvalidCampaignException.InvalidCampaign(medium, "Medium is invalid");
+            InvalidCampaignException.InvalidCampaign(name, "Name is invalid");
         }
         
         public string? Id { get; private set; }
