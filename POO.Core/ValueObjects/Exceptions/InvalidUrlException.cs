@@ -16,7 +16,7 @@ namespace POO.Core.ValueObjects.Exceptions
             if (string.IsNullOrEmpty(address))
                 throw new InvalidUrlException(message);
 
-            if (UrlRegex().IsMatch(address))
+            if (!UrlRegex().IsMatch(address))
                 throw new InvalidUrlException(message);
         }
 
